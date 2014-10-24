@@ -16,6 +16,7 @@ $ sudo rpm -ivh vagrant_1.6.5_x86_64.rpm
 
 ```
 $ vagrant plugin install vagrant-aws
+$ vagrant plugin install vagrant-omnibus
 ```
 
 ### AWSアクセスキー セット

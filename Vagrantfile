@@ -62,6 +62,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION = "2") do |config|
     override.ssh.private_key_path = '~/.ssh/try-vagrant-aws.pem'
     override.ssh.pty = true
 
+    # Chef
+    override.omnibus.chef_version = :latest
+    override.vm.provision :chef_solo do |chef|
+      chef.custom_config_path = 'Vagrantfile.chef'
+      chef.run_list = [
+        'sl',
+      ]
+    end
+
   end
 
 end
